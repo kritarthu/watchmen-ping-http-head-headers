@@ -22,6 +22,7 @@ PingService.prototype.ping = function (service, callback) {
   }
 
   request.get(options, function (error, response, body) {
+    console.dir(response)
     if (error) {
       return callback(error, body, response, +new Date() - startTime);
     }
