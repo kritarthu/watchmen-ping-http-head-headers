@@ -16,13 +16,12 @@ PingService.prototype.ping = function (service, callback) {
 
   var expectedStatusCode = 200;
 
-  var serviceOptions = (service.pingServiceOptions && service.pingServiceOptions['http-head']) || {};
+  var serviceOptions = (service.pingServiceOptions && service.pingServiceOptions['http-head-headers']) || {};
   if (serviceOptions.statusCode && serviceOptions.statusCode.value) {
     expectedStatusCode = parseInt(serviceOptions.statusCode.value, 10);
   }
 
   request.get(options, function (error, response, body) {
-    console.dir(response)
     if (error) {
       return callback(error, body, response, +new Date() - startTime);
     }
