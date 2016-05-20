@@ -1,6 +1,6 @@
 {
   "name": "watchmen-ping-http-head-headers",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "HTTP ping service for watchmen with headers",
   "main": "index.js",
   "scripts": {
